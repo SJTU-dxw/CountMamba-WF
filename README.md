@@ -192,17 +192,7 @@ done
 
 **All formatted datasets can be downloaded at https://zenodo.org/records/14195051**
 
-## 4. Website FingerPrinting
-```shell
-cd CountMamba
-for dataset in CW OW
-do
-  python main.py --dataset ${dataset} --log_transform --maximum_load_time 120 --max_matrix_len 2700
-  python test.py --dataset ${dataset} --log_transform --load_ratio 100 --result_file test_p100 --maximum_load_time 120 --max_matrix_len 2700
-done
-```
-
-## 5. WF for defensed traffic
+## 4. WF for defensed traffic
 ```shell
 cd CountMamba
 for dataset in wtfpad_CW front_CW regulator_CW tamaraw_CW trafficsilver_rb_CW trafficsilver_bd_CW trafficsilver_bwr_CW
@@ -212,7 +202,7 @@ do
 done
 ```
 
-## 6. WF for early-stage detection
+## 5. WF for early-stage detection
 Generate early-stage test set
 ```shell
 cd data_process
@@ -229,7 +219,7 @@ do
 done
 ```
 
-### 6.1 Real-World Early-Stage Traffic Classification
+##### Real-World Early-Stage Traffic Classification
 ```shell
 cd EarlyStage
 for threshold in 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.95 1.0
@@ -238,7 +228,7 @@ do
 done
 ```
 
-## 7. WF for multi-tab detection
+## 6. WF for multi-tab detection
 ```shell
 cd CountMamba
 for num in 2 3 4 5
@@ -251,7 +241,7 @@ do
 done
 ```
 
-### 7.1 Fine-grained multi-tab detection
+##### Fine-grained multi-tab detection
 ```shell
 cd CountMamba
 for num in 2
@@ -261,5 +251,15 @@ do
   
   python main.py --dataset chrome_multi_tab --epochs 300 --log_transform --num_tabs ${num} --seq_len 10000 --maximum_load_time 160 --max_matrix_len 3600 --fine_predict
   python test.py --dataset chrome_multi_tab --log_transform --num_tabs ${num} --seq_len 10000 --maximum_load_time 160 --max_matrix_len 3600 --load_ratio 100 --result_file test_p100 --fine_predict
+done
+```
+
+## 7. Website FingerPrinting
+```shell
+cd CountMamba
+for dataset in CW OW
+do
+  python main.py --dataset ${dataset} --log_transform --maximum_load_time 120 --max_matrix_len 2700
+  python test.py --dataset ${dataset} --log_transform --load_ratio 100 --result_file test_p100 --maximum_load_time 120 --max_matrix_len 2700
 done
 ```
