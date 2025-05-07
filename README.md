@@ -192,10 +192,10 @@ done
 
 **All formatted datasets can be downloaded at https://zenodo.org/records/14195051**
 
-## 4. WF for defensed traffic
+## 4. Website FingerPrinting
 ```shell
 cd CountMamba
-for dataset in wtfpad_CW front_CW regulator_CW tamaraw_CW trafficsilver_rb_CW trafficsilver_bd_CW trafficsilver_bwr_CW
+for dataset in CW OW
 do
   python main.py --dataset ${dataset} --log_transform --maximum_load_time 120 --max_matrix_len 2700
   python test.py --dataset ${dataset} --log_transform --load_ratio 100 --result_file test_p100 --maximum_load_time 120 --max_matrix_len 2700
@@ -254,10 +254,10 @@ do
 done
 ```
 
-## 7. Website FingerPrinting
+## 7. WF for defensed traffic
 ```shell
 cd CountMamba
-for dataset in CW OW
+for dataset in wtfpad_CW front_CW regulator_CW tamaraw_CW trafficsilver_rb_CW trafficsilver_bd_CW trafficsilver_bwr_CW
 do
   python main.py --dataset ${dataset} --log_transform --maximum_load_time 120 --max_matrix_len 2700
   python test.py --dataset ${dataset} --log_transform --load_ratio 100 --result_file test_p100 --maximum_load_time 120 --max_matrix_len 2700
