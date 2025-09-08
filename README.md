@@ -254,7 +254,7 @@ do
 done
 ```
 
-## 7. WF for defensed traffic
+## 7. WF for defended traffic
 ```shell
 cd CountMamba
 for dataset in wtfpad_CW front_CW regulator_CW tamaraw_CW trafficsilver_rb_CW trafficsilver_bd_CW trafficsilver_bwr_CW
